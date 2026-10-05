@@ -1,0 +1,7 @@
+{
+  "supabase_cdn": true,
+  "firebase_removed": true,
+  "otp_removed": true,
+  "scripts_exist": true,
+  "index_has_app": true
+}

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#2952e3">
+<meta name="description" content="Dash Lebanon — everyday products, delivered fast across Lebanon.">
+<title>Dash Lebanon | Everyday products, delivered fast.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/admin.css">
+<link rel="stylesheet" href="css/ai.css">
+<link rel="stylesheet" href="css/responsive.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<div id="loading-screen" class="loading-screen" style="display: none;"><div class="brand"><span class="dot"></span> Dash <span style="color:var(--accent)">Lebanon</span></div><div class="spin spin-dark" style="width:22px;height:22px"></div></div>
+
+<div id="announce" class="hide"></div>
+
+<header class="site">
+  <div class="hbar">
+    <div class="hbar-side left">
+      <button class="icon-btn burger-btn" onclick="openDrawer()" aria-label="Menu"><div class="burger"><span></span><span></span><span></span></div></button>
+    </div>
+    <div class="brand" onclick="handleHiddenAdminClick()"><span class="dot"></span> Dash <span style="color:var(--accent)">Lebanon</span></div>
+    <nav class="nav-links">
+      <button onclick="resetHome()" data-nav="home" class="on">Home</button>
+      <button onclick="viewAllCategory('offers')" data-nav="offers">Offers</button>
+      <button onclick="nav('wishlist')" data-nav="wishlist">Wishlist</button>
+      <button onclick="nav('orders')" data-nav="orders">Orders</button>
+      <button onclick="nav('contact')" data-nav="contact">Contact</button>
+      <button onclick="nav('admin')" data-nav="admin" class="admin-only-link hide">Admin</button>
+    </nav>
+    <div class="hbar-side right">
+      <button class="icon-btn" onclick="openSearch()" title="Search">🔍</button>
+      <button class="icon-btn" onclick="nav('cart')" title="Cart">🛒<span class="badge hide" id="cart-badge">0</span></button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer-ov" id="drawer-ov" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-head"><div class="brand"><span class="dot"></span> Dash <span style="color:var(--accent)">Lebanon</span></div><button class="icon-btn" onclick="closeDrawer()">✕</button></div>
+  <div class="drawer-hr"></div>
+  <nav>
+    <button onclick="resetHome();closeDrawer()">Home page</button>
+    <button onclick="viewAllCategory('all');closeDrawer()">All products</button>
+    <button onclick="viewAllCategory('offers');closeDrawer()">Offers</button>
+    <button onclick="nav('wishlist');closeDrawer()">Wishlist</button>
+    <button onclick="nav('orders');closeDrawer()">My orders</button>
+    <button onclick="nav('points');closeDrawer()">My points</button>
+    <button onclick="nav('account');closeDrawer()">Account</button>
+    <button onclick="nav('contact');closeDrawer()">Contact us</button>
+    <button onclick="nav('admin');closeDrawer()" class="admin-only-link hide">⚙ Admin dashboard</button>
+  </nav>
+  <div class="drawer-hr"></div>
+  <nav>
+    <button onclick="toggleDark()" id="drawer-dm-btn">☀️ Light mode</button>
+  </nav>
+  <div class="drawer-soc" id="drawer-soc"></div>
+  <div class="drawer-foot"><a class="btn btn-primary" style="background:#25D366" href="https://wa.me/" id="drawer-wa" target="_blank">Chat on WhatsApp</a></div>
+</div>
+
+<div id="app"><div class="page">
+    <div class="hero"><div class="hero-in">
+      <div class="hero-eyebrow">Cash on delivery · anywhere in Lebanon</div>
+      <h1>Everyday products, <span class="hl">delivered</span> fast.</h1>
+      <p>Quality home, kitchen &amp; beauty finds — cash on delivery, anywhere in Lebanon.</p>
+      <div class="hero-cta"><button class="btn btn-accent" onclick="viewAllCategory('offers')">See offers</button><button class="btn btn-ghost" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.35)" onclick="viewAllCategory('all')">Shop all</button></div>
+    </div></div>
+    <div class="marquee"><div class="marquee-track">Shop now <b>↓</b>Shop now <b>↓</b>Shop now <b>↓</b>Shop now <b>↓</b>Shop now <b>↓</b>Shop now <b>↓</b>Shop now <b>↓</b>Shop now <b>↓</b>Shop now <b>↓</b>Shop now <b>↓</b>Shop now <b>↓</b>Shop now <b>↓</b>Shop now <b>↓</b>Shop now <b>↓</b>Shop now <b>↓</b>Shop now <b>↓</b></div></div>
+    <div class="cat-section">
+    <div class="cat-section-title">Quick Cleaning Solutions</div>
+    <div class="carousel-wrap">
+      <div class="carousel-track" id="car-8224146d-78e8-486e-992c-b6b9c393d666"><div class="pcard" onclick="nav('product','b3fba6df-252a-4fc5-a1b1-b4d422e73d5e')">
+    <div class="pcard-img">
+      <div class="chip-corner">SAVE 11%</div>
+      
+      <img src="./Dash Lebanon _ Everyday products, delivered fast._files/car-foam-cleaner-spray.jpg" loading="lazy" alt="Car Seats Foam Cleaner - فوم تنظيف فرش السيارات" onerror="this.src='https://placehold.co/400x400/e7ebf3/98a2b8?text=No+Image'">
+      <button class="wish-btn " data-pid="b3fba6df-252a-4fc5-a1b1-b4d422e73d5e" onclick="toggleWish('b3fba6df-252a-4fc5-a1b1-b4d422e73d5e',event)">♡</button>
+    </div>
+    <div class="pcard-body">
+      <div class="pcard-name">Car Seats Foam Cleaner - فوم تنظيف فرش السيارات</div>
+      <div class="pcard-price-row">
+        <div class="pcard-price">$8.00</div>
+        <div class="pcard-old">$9.00</div>
+      </div>
+      <button class="pcard-cta" onclick="quickAdd('b3fba6df-252a-4fc5-a1b1-b4d422e73d5e',event)">Add to cart</button>
+      <div class="pcard-foot"><span>New</span><span>+56pts</span></div>
+    </div>
+  </div></div>
+    </div>
+    <div class="carousel-nav">
+      <button class="car-arrow" onclick="scrollRow('car-8224146d-78e8-486e-992c-b6b9c393d666',-1)" aria-label="Previous">‹</button>
+      <button class="car-arrow" onclick="scrollRow('car-8224146d-78e8-486e-992c-b6b9c393d666',1)" aria-label="Next">›</button>
+    </div>
+    <div class="view-all-row"><button class="btn btn-ghost btn-pill btn-sm" onclick="viewAllCategory('car')">View all</button></div>
+  </div>
+    <div class="card compare-wrap">
+    <div class="compare-title">Why Dash Lebanon?</div>
+    <table class="compare-table">
+      <tbody><tr><th></th><th>Dash Lebanon</th><th>Some Stores</th><th>Others</th></tr>
+      <tr><td>Fast delivery, all over Lebanon</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">✕</td></tr><tr><td>Cash on delivery</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">✕</td></tr><tr><td>WhatsApp support</td><td class="yes">✓</td><td class="no">✕</td><td class="no">✕</td></tr><tr><td>Loyalty points on every order</td><td class="yes">✓</td><td class="no">✕</td><td class="no">✕</td></tr><tr><td>Easy order cancellation</td><td class="yes">✓</td><td class="no">✕</td><td class="no">✕</td></tr>
+    </tbody></table>
+  </div>
+  </div></div>
+
+<footer class="site" id="site-footer">
+  <div class="footer-in">
+    <div class="footer-top">
+      <div><div class="footer-brand">Dash <span style="color:var(--accent)">Lebanon</span></div><div class="footer-tag" id="footer-tag">Quality home, kitchen &amp; beauty finds — cash on delivery, anywhere in Lebanon.</div>
+        <div class="soc-row" id="footer-soc"></div>
+      </div>
+      <div class="footer-col"><div class="footer-h">Shop</div>
+        <button onclick="resetHome()">Home</button>
+        <button onclick="viewAllCategory('offers')">Offers</button>
+        <button onclick="nav('wishlist')">Wishlist</button>
+        <button onclick="nav('orders')">My Orders</button>
+      </div>
+      <div class="footer-col"><div class="footer-h">Contact</div>
+        <a id="footer-wa" target="_blank" href="https://wa.me/">WhatsApp</a>
+        <a id="footer-email" href="mailto:"></a>
+        <button onclick="nav('contact')">Contact form</button>
+      </div>
+    </div>
+    <div class="footer-bottom">© <span id="footer-year">2026</span> Dash Lebanon. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- Mobile bottom navigation: central + expands quick actions -->
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-items" id="mobile-nav-items" aria-hidden="true">
+    <button class="mobile-nav-action" onclick="toggleMobilePlus();openSearch()" title="Search">🔍</button>
+    <button class="mobile-nav-action" onclick="toggleMobilePlus();nav('cart')" title="Cart">🛒</button>
+    <button class="mobile-nav-action" onclick="toggleMobilePlus();toggleAiPanel()" title="AI Assistant">✨</button>
+    <button class="mobile-nav-action" onclick="toggleMobilePlus();nav('account')" title="Account">👤</button>
+  </div>
+  <button class="mobile-nav-link" data-mnav="home" onclick="nav('home')"><span class="mn-icon">⌂</span>Home</button>
+  <button class="mobile-nav-link" data-mnav="wishlist" onclick="nav('wishlist')"><span class="mn-icon">♡</span>Favorites</button>
+  <div class="mobile-nav-slot"><button class="mobile-nav-plus" id="mobile-nav-plus" onclick="toggleMobilePlus()" aria-label="Quick actions">+</button></div>
+  <button class="mobile-nav-link" data-mnav="orders" onclick="nav('orders')"><span class="mn-icon">📦</span>Orders</button>
+</div>
+<a class="wa-fab" id="wa-fab" target="_blank" href="https://wa.me/" aria-label="WhatsApp">💬</a>
+<button class="ai-fab" id="ai-fab" onclick="toggleAiPanel()" aria-label="Chat with assistant">✨</button>
+<div class="ai-panel-ov" id="ai-panel-ov" onclick="closeAiPanel()"></div>
+<div class="ai-panel" id="ai-panel" role="dialog" aria-label="المساعد الذكي">
+  <div class="ai-head"><div><div id="ai-head-name">Dash Lebanon Assistant</div><div id="ai-head-sub">Ask me anything about the store.</div></div><button onclick="closeAiPanel()" class="ai-close">×</button></div>
+  <div class="ai-body" id="ai-body"></div>
+  <div class="ai-foot">
+    <input type="file" id="ai-image-input" accept="image/*" multiple hidden onchange="aiHandleImages(event)">
+    <button class="ai-send" type="button" onclick="document.getElementById('ai-image-input').click()" title="Send image">🖼</button>
+    <textarea class="ai-input" id="ai-input" rows="1" placeholder="اكتب رسالتك هنا…" onkeydown="aiInputKey(event)" oninput="aiAutoGrow(this)"></textarea>
+    <button class="ai-send" id="ai-mic" onclick="aiVoiceInput()" title="تحدث">🎙</button>
+    <button class="ai-send" id="ai-send" onclick="aiSend()">➤</button>
+  </div>
+</div>
+
+<div id="toast"></div>
+<div id="modal-root"></div>
+<script src="js/01-config.js"></script>
+<script src="js/02-state.js"></script>
+<script src="js/03-routing.js"></script>
+<script src="js/04-boot.js"></script>
+<script src="js/05-theme.js"></script>
+<script src="js/06-router.js"></script>
+<script src="js/07-products.js"></script>
+<script src="js/08-home.js"></script>
+<script src="js/09-product-detail.js"></script>
+<script src="js/10-reviews.js"></script>
+<script src="js/11-wishlist.js"></script>
+<script src="js/12-cart.js"></script>
+<script src="js/13-checkout.js"></script>
+<script src="js/14-orders.js"></script>
+<script src="js/15-points.js"></script>
+<script src="js/16-account.js"></script>
+<script src="js/17-contact.js"></script>
+<script src="js/18-admin-login.js"></script>
+<script src="js/19-admin.js"></script>
+<script src="js/20-ai.js"></script>
+<script src="js/21-app.js"></script>
+<script>window.addEventListener("DOMContentLoaded",()=>{try{boot()}catch(e){console.error(e)}});</script>
+</body>
+</html>
